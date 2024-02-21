@@ -10,15 +10,15 @@ public class MainClass {
         // Access player information
         System.out.println(player1.getName() + " plays as " + player1.getMark());
         System.out.println(player2.getName() + " plays as " + player2.getMark());
-
-        TicTacToe game = new TicTacToe(4);
+        System.out.println("please enter how large you want the board to be (ex: 3)");
+        TicTacToe game = new TicTacToe(scanner.nextInt());
 
         while(!game.isGameOver()){
             //game.displayBoard();
             Player currentPlayer = (game.getCurrentPlayer() == 'X') ? player1 : player2;
-            System.out.println(currentPlayer.getName() + "'s turn. Enter row (0-2): ");
+            System.out.println(currentPlayer.getName() + "'s turn. Enter row (ex: 0): ");
             int row = scanner.nextInt() /* read row input */;
-            System.out.println("Enter Column (0-2): ");
+            System.out.println("Enter Column (ex: 0): ");
             int col = scanner.nextInt() /* read column input */;
             // Make the move
             game.makeMove(row, col);
